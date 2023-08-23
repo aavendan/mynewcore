@@ -7,8 +7,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DataService {
 
-  private URLAutor: string = "http://localhost:3000/rest/autor/findAll/json"
-  private URLLibro: string = "http://localhost:3000/rest/libro/findAll/json"
+  private URLAutor: string = "https://restlibreria-production.up.railway.app/rest/autor/findAll/json"
+  private URLLibro: string = "https://restlibreria-production.up.railway.app/libro/findAll/json"
   private URLLibroByAutor: string = ``
 
   constructor(private http: HttpClient) { }
@@ -22,7 +22,7 @@ export class DataService {
   }
 
   getResponseLibroByAutorId(id: number) {
-    this.URLLibroByAutor= `http://localhost:3000/rest/libro/findBookByAuthor/${id}/json`
+    this.URLLibroByAutor= `https://restlibreria-production.up.railway.app/rest/libro/findBookByAuthor/${id}/json`
     console.log(this.URLLibroByAutor)
     return this.http.get(this.URLLibroByAutor);
   }
